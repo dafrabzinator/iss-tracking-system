@@ -6,7 +6,7 @@ This is a python application that tracks the location of the International Space
 - Display the current latitude, longitude, and address (when available) of the ISS
 - Store the location history of the ISS in a SQLite database
 - Create a graph of the historical location data of the ISS using matplotlib
-- Display the location of the ISS on a map using folium. see the[map](map.html).
+- Display the location of the ISS on a map using folium. see the [map](map.html).
 
 ## Requirements
 - Python 3
