@@ -1,5 +1,7 @@
 import requests
 import json
+import sys
+import folium
 import tkinter as tk
 from geopy.geocoders import Nominatim
 geolocator = Nominatim(user_agent="geoapiExercises")
@@ -37,6 +39,27 @@ def update_location():
     location = geolocator.reverse("{}, {}".format(data['iss_position']['latitude'], data['iss_position']['longitude']), timeout=10)
     address = location.address
     addr.config(text="Address: " + address)
+def update_location():
+    try:
+        response = requests.get(url)
+        data = json.loads(response.text)
+        lat.config(text="Latitude: " + data['iss_position']['latitude'])
+        lon.config(text="Longitude: " + data['iss_position']['longitude'])
+        location = geolocator.reverse("{}, {}".format(data['iss_position']['latitude'], data['iss_position']['longitude']), timeout=10)
+        address = location.address
+        if address:
+            addr.config(text="Address: " + address)
+        else:
+            addr.config(text="Address: Not found")
+    except Exception as e:
+        print("Error: {}".format(str(e)))
+        lat.config(text="Latitude: Not found")
+        lon.config(text="Longitude: Not found")
+        addr.config(text="Address: Not found")
+# Create a map with the location of the ISS
+map = folium.Map(location=[a, b], zoom_start=4)
+folium.CircleMarker(location=[a, b], radius=15, color='red').add_to(map)
+
 
 root = tk.Tk()
 root.title("ISS Location")
@@ -54,4 +77,6 @@ refresh_button = tk.Button(root, text="Refresh", command=update_location)
 refresh_button.pack()
 
 update_location()
+root.mainloop()
+root.after(20000, update_location)
 root.mainloop()
