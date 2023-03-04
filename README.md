@@ -28,3 +28,14 @@ This is a python application that tracks the location of the International Space
 
 ## License
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+## Author :memo:
+
+<div style="text-align: right;">
+  <a href="https://twitter.com/dafrabzinator" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter Logo" width="30" height="20" style="margin-right: 20px;">
+  </a>
+  <a href="http://linkedin.com/in/oluwabusayomi-s-orosunlegan-6a0144263" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn Logo" width="30" height=" 20" style="margin-left: 20px;">
+  </a>
+</div>
